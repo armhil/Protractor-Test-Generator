@@ -1,0 +1,7 @@
+%GLOBALDEFINITIONS%
+
+describe('test suite for %NAME%', function() {
+    %TESTSETTINGS%
+
+%TESTTEMPLATE%
+});

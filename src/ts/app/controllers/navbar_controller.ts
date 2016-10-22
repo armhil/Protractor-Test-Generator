@@ -13,7 +13,7 @@ module ExtensionApp.Controllers
 	export class NavbarController
 	{
 		/** dependency injection */
-		static $inject = ['$scope', '$location', 'TemplateService'];
+		static $inject = ['$scope', '$location', 'ProtractorTemplateService'];
 
 		/**
 		 * Constructor for the controller
@@ -32,7 +32,7 @@ module ExtensionApp.Controllers
 			$scope.Back = () =>
 			{
 				window.history.back();
-			}
+			};
 
 			$scope.Download = () =>
 			{

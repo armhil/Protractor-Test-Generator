@@ -12,7 +12,7 @@ module ExtensionApp.Controllers
 		/**
 		 * Dependency injection.
 		 */
-		static $inject = ['$scope', 'ChromeService', 'TemplateService', 'chrome'];
+		static $inject = ['$scope', 'ChromeService', 'ProtractorTemplateService', 'chrome'];
 
 		/**
 		 * Constructor for events controller.
