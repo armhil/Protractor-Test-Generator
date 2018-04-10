@@ -1,32 +1,44 @@
 {
-	"manifest_version": 2,
-	"author": "Arman Hilmioglu",
-	"name": "Protractor-Test-Generator",
-	"description": "Record your events and automatically construct protractor tests with them.",
-	"version": "1.0",
-	"background" : {
-		"scripts": ["background.js"],
-		"persistent" : true
-	},
-	"icons": { "16": "images/icon16.png",
-		"48": "images/icon48.png",
-		"128": "images/icon128.png" },
-	"browser_action": {
-		"default_icon": "images/icon.png",
-		"default_title" : "Protractor-Test-Generator"
-	},
-	"permissions": [
-		"activeTab",
-		"contentSettings",
-		"https://ajax.googleapis.com/",
-		"downloads",
-		"webRequest",
-		"contextMenus"
-	],
-	"content_scripts": [{
-		"matches": ["<all_urls>"],
-		"js": ["vendor/jquery-1.9.1.min.js", "content.js"],
-		"run_at": "document_start",
-		"all_frames": true
-	}]
+  "manifest_version": 2,
+  "author": "Arman Hilmioglu",
+  "name": "Protractor-Test-Generator",
+  "description": "Record your events and automatically construct protractor tests with them.",
+  "version": "1.0",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "Protractor-Test-Generator"
+  },
+  "permissions": [
+    "activeTab",
+    "contentSettings",
+    "https://ajax.googleapis.com/",
+    "downloads",
+    "webRequest",
+    "contextMenus",
+    "http://localhost:8080"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "vendor/jquery-1.9.1.min.js",
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
 }

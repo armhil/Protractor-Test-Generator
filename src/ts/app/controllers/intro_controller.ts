@@ -12,14 +12,14 @@ module ExtensionApp.Controllers
 		/**
 		 * Dependency injection.
 		 */
-		static $inject = ['$scope', 'ChromeService', 'TemplateService', 'chrome'];
+		static $inject = ['$scope', 'ChromeService', 'ProtractorTemplateService', 'DownloadStorageService', 'chrome'];
 
 		/**
 		 * Constructor for events controller.
 		 * @param $scope the scope
 		 * @param ChromeService chrome service
 		 */
-		constructor(private $scope, private ChromeService: Services.ChromeService, private TemplateService: Services.TemplateService, private chrome: any)
+		constructor(private $scope, private ChromeService: Services.ChromeService, private TemplateService: Services.TemplateService, private StorageService: Services.DownloadStorageService, private chrome: any)
 		{
 			/** If the chrome service is not initialized present the base page request experience. */
 			if (!ChromeService.isInitialized)
@@ -95,7 +95,9 @@ module ExtensionApp.Controllers
 		/** Download the tests */
 		Download()
 		{
-			this.TemplateService.DownloadFile('Recorded Tests');
+			let testId = 'Recorded test';
+			let fileData = this.TemplateService.ComposeFile(testId);
+			this.StorageService.StoreFile(testId + '.js', fileData);
 		}
 	}
 }
